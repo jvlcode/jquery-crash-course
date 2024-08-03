@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        .highlight {
+            background-color: lightyellow;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray
+        }
+        .removeButton {
+            color: red;
+            cursor: pointer;
+        }
+        .editButton {
+            color: blue;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <input type="text" id="taskInput" placeholder="Enter a Task">
+    <button id="addTask">Add Task</button>
+    <ul id="taskList">
+        <!-- Task items will be added here -->
+    </ul>
+    <script src="./js/task-manager.js"></script>
+</body>
+</html>

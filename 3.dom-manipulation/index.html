@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <style>
+        .highlight {
+            background-color: yellow;
+        }
+        .container {
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">Old HTML</div>
+    <img id="logo" src="logo.png" alt="Logo">
+    <input type="text" id="inputField" value="Old Value">
+    <div id="parent">
+        <p>Text 1</p>
+    </div>
+    <div id="toRemove">This will be removed</div>
+    <div id="box">Content</div>
+    <div class="highlight" id="box2">Content 2</div>
+    <div  id="box3">Content 3</div>
+    <div class="highlight"  id="box4">Content 4</div>
+    
+    <div class="container">
+        <button id="myButton">Click me!</button>
+    </div>
+    
+    <h1>Sibling Highlighting</h1>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item special">Item 3</div>
+        <div class="item">Item 4</div>
+    </div>
+    
+    <script>
+        // html()
+        // $('#content').html('<p>New HTML Content</p>');
+        
+        // text()
+        $('#content').text('New Text Content');
+
+        // attr()
+        $('#logo').attr('src', 'new-logo.png');
+        $('#logo').attr('alt', 'NEW-Logo');
+
+        // val()
+        $('#inputField').val('New value')
+
+        // append()
+        $('#parent').append('<p>Text 2</p>');
+
+        // prepend()
+        $('#parent').prepend('<p>Text 0</p>')
+
+        // remove()
+        $('#toRemove').remove();
+
+        // addClass()
+        $('#box').addClass('highlight');
+
+        // removeClass()
+        $('#box2').removeClass('highlight');
+
+        // toggleClass
+        $('#box3').toggleClass('highlight')
+        $('#box4').toggleClass('highlight')
+
+        // parent()
+        $('#myButton').click(function() {
+            var parentEl = $(this).parent();
+            parentEl.toggleClass('highlight')
+        })
+
+        // siblings()
+        $('.item').click(function() {
+            var siblings = $(this).siblings();
+            siblings.toggleClass('highlight')
+            var special = $(this).siblings('.special')
+            special.css('background-color','red')
+        })
+    </script>
+</body>
+</html>

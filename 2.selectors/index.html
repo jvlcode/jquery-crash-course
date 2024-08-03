@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div id="uniqueElement">Content</div>
+
+    <div class="box">Content 1</div>
+    <div class="box">Content 2</div>
+
+    <p>Pargraph 1</p>
+    <p>Pargraph 2</p>
+
+    <form action="">
+        <input type="text" placeholder="Enter Text">
+        <input type="password" placeholder="Enter password">
+        <input type="text" name="username">
+        <input type="text" name="email">
+    </form>
+
+    <a href="http://example.com">Example</a>
+    <a href="http://example.org">Example Org</a>
+    <a href="https://google.com">Example Google</a>
+
+    <div class="container">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+    </div>
+    
+    <div class="parent">
+        <p>Direct Child</p>
+        <div>
+            <p>Not a Direct Child</p>
+        </div>
+    </div>
+
+    <script>
+        // ID selector
+        $('#uniqueElement').text('New Content');
+
+        // Class selector
+        $('.box').css('background-color','yellow');
+
+        // Element Selector
+        // $('p').hide();
+
+        // Attribute Selector
+        $('[placeholder]').css('border','2px solid');
+
+        // Value Selector
+        $('[name="username"]').val('Default Username');
+
+        // Partial Value Selector
+        $('a[href*="example"]').css('color', 'red')
+        $('a[href^="https://google"]').css('color', 'green')
+        
+        // Descendant Selector
+        $('.container p').css('color','blue')
+        
+        // Child Selector
+        $('.parent > p').css('font-weight','bold')
+    </script>
+</body>
+</html>
